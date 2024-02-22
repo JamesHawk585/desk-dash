@@ -4,13 +4,14 @@ import CurrentDateAndTimeCard from './CurrentDateAndTimeCard';
 import react, { useState, useEffect } from 'react'
 
 const API = "http://127.0.0.1:5555/forecast"
-const weatherAPI = "https://api.weather.gov/points/38.7192,-94.4586"
+const peculiarWeatherAPI = "https://api.weather.gov/points/38.7192,-94.4586"
+ const weatherForecastAPI = " https://api.weather.gov/gridpoints/EAX/48,34/forecast"
 
 function App() {
   const [weather, setWeather] = useState(null)
 
   useEffect(() => {
-    const fetchWeather = () => fetch(weatherAPI).then(r => r.json())
+    const fetchWeather = () => fetch(weatherForecastAPI).then(r => r.json())
 
     async function startFetching() {
       const weatherData = await fetchWeather()
@@ -21,10 +22,12 @@ function App() {
     
   }, [])
 
+  
+
   return (
     <>
     <CurrentDateAndTimeCard/>
-    <CurrentWeatherCard />
+    <CurrentWeatherCard weather={weather}/>
     </>
   );
 }
