@@ -13,6 +13,8 @@ function App() {
   useEffect(() => {
     const fetchWeather = () => fetch(weatherForecastAPI).then(r => r.json())
 
+
+    // startFetching should be called at regular intervals to update the dom. 
     async function startFetching() {
       const weatherData = await fetchWeather()
       console.log(weatherData)

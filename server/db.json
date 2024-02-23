@@ -1,15 +1,4 @@
 {
-    "city": "Faketown",
-    "country": "Fakeland",
-    "latitude": 40.7128,
-    "longitude": -74.0060,
-    "current_conditions": {
-      "temperature": 72,
-      "humidity": 60,
-      "wind_speed": 5,
-      "wind_direction": "NW",
-      "description": "Partly Cloudy"
-    },
     "forecast": [
       {
         "date": "2024-02-21",
