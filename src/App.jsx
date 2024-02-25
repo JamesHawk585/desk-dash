@@ -2,6 +2,8 @@ import "./App.css";
 import CurrentWeatherCard from "./CurrentWeatherCard";
 import CurrentDateAndTimeCard from "./CurrentDateAndTimeCard";
 import react, { useState, useEffect } from "react";
+import CalendarSection from "./CalendarSection.jsx"
+import WeatherSection from "./WeatherSection";
 
 const API = "http://127.0.0.1:5555/forecast";
 const peculiarWeatherAPI = "https://api.weather.gov/points/38.7192,-94.4586";
@@ -43,8 +45,8 @@ function App() {
   return (
     <>
       <section className="app">
-        <CurrentDateAndTimeCard />
-        <CurrentWeatherCard weather={weather} />
+        <WeatherSection weather={weather}/>
+        <CalendarSection />
       </section>
     </>
   );
