@@ -1,4 +1,6 @@
 import React from "react";
+import index from './index.css';
+
 
 const CurrentWeatherCard = ({ weather }) => {
 
@@ -7,7 +9,7 @@ const CurrentWeatherCard = ({ weather }) => {
 
 
   return (
-    <div>
+    <div className="current-weather-card">
       <h2>CurrentWeatherCard</h2>
       <h3>{weather.detailedForecast}</h3>
       <h3>{weather.temperature}°{weather.temperatureUnit}</h3>

@@ -45,8 +45,10 @@ function App() {
 
   return (
     <>
+    <section className='app'>
     <CurrentDateAndTimeCard/>
     <CurrentWeatherCard weather={weather}/>
+    </section>
     </>
   );
 }

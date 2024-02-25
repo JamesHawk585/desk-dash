@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app {
+  background-image: `url(https://c4.wallpaperflare.com/wallpaper/414/668/941/for-desktop-nature-scenes-beautiful-scenery-1920x1080-wallpaper-preview.jpg;)`
+
+}
+
+.current-weather-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: skyblue; */
+  align-items: center;
+}
