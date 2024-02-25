@@ -13,7 +13,7 @@ code {
 }
 
 .app {
-  background-image: `url(https://c4.wallpaperflare.com/wallpaper/414/668/941/for-desktop-nature-scenes-beautiful-scenery-1920x1080-wallpaper-preview.jpg;)`
+  background-image: url('./backgroundPhoto.jpg')
 
 }
 
