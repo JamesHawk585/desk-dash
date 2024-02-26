@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState, } from "react";
 
 const CurrentDateAndTimeCard = () => {
-  return (
-    <div>CurrentDateAndTimeCard</div>
-  )
-}
+  const [date, setDate] = useState(new Date());
 
-export default CurrentDateAndTimeCard
+  useEffect(() => {
+    const intervalId = setInterval(() => setDate(new Date()), 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+
+  return (
+    <div>
+      <h2>CurrentDateAndTimeCard</h2>
+      <h2>{date.toString()}</h2>
+    </div>
+  );
+};
+
+export default CurrentDateAndTimeCard;
