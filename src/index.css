@@ -12,15 +12,14 @@ code {
     monospace;
 }
 
-.app {
-  background-image: url('./backgroundPhoto.jpg')
 
-}
 
 .current-weather-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: skyblue; */
+  background-color: skyblue;
   align-items: center;
 }
+
+

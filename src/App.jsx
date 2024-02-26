@@ -13,6 +13,7 @@ const weatherForecastAPI =
 function App() {
   const [weather, setWeather] = useState({});
 
+
   // useEffect(() => {
   //   const fetchWeather = () => fetch(weatherForecastAPI, {
   //     headers: {
@@ -41,6 +42,8 @@ function App() {
 
     fetchWeather();
   }, []);
+
+  console.log(weather.detailedForecast)
 
   return (
     <>
