@@ -10,45 +10,51 @@ const peculiarWeatherAPI = "https://api.weather.gov/points/38.7192,-94.4586";
 const weatherForecastAPI =
   " https://api.weather.gov/gridpoints/EAX/48,34/forecast";
 
+// 1:33:00
+
 function App() {
-  const [weather, setWeather] = useState({});
+  const [currentWeather, setCurrentWeather] = useState({});
+  const [forecastWeather, setForecastWeather] = useState([])
 
-
-  // useEffect(() => {
-  //   const fetchWeather = () => fetch(weatherForecastAPI, {
-  //     headers: {
-  //       'User-Agent': 'desk-dash/1.0'
-  //     }
-  //   }).then(r => r.json())
-
-  //   // startFetching should be called at regular intervals to update the dom.
-  //   async function startFetching() {
-  //     const weatherData = await fetchWeather()
-  //     console.log(weatherData)
-  //     setWeather(weatherData)
-  //   }
 
   useEffect(() => {
-    const fetchWeather = () => {
+    const fetchForecastWeather = () => {
+      fetch(weatherForecastAPI, {
+        headers: {
+          'User-Agent': 'desk-dash/1.0'
+        }
+      }).then((r) => r.json())
+      .then((forecastData) => setForecastWeather(forecastData.properties.periods))
+    };
+      fetchForecastWeather();
+  }, [])
+
+
+  console.log(forecastWeather)
+  // const forecastArray = forecastWeather ? forecastWeather.properties.periods : null;
+  
+
+
+  useEffect(() => {
+    const fetchCurrentWeather = () => {
       fetch(weatherForecastAPI, {
         headers: {
           "User-Agent": "desk-dash/1.0",
         },
       })
         .then((response) => response.json())
-        .then((weatherData) => setWeather(weatherData.properties.periods[0]))
+        .then((weatherData) => setCurrentWeather(weatherData.properties.periods[0]))
         .catch((error) => console.error("Error fetching weather data:", error));
     };
 
-    fetchWeather();
+    fetchCurrentWeather();
   }, []);
 
-  console.log(weather.detailedForecast)
 
   return (
     <>
       <section className="app">
-        <WeatherSection weather={weather}/>
+        <WeatherSection currentWeather={currentWeather}/>
         <CalendarSection />
       </section>
     </>

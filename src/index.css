@@ -12,7 +12,12 @@ code {
     monospace;
 }
 
-
+.current-date-and-time-card {
+  background-color: aquamarine;
+  width: 30vw;
+  align-self: flex-end;
+  justify-self: end;
+}
 
 .current-weather-card {
   display: flex;
@@ -20,6 +25,14 @@ code {
   justify-content: center;
   background-color: skyblue;
   align-items: center;
+  width: 30vw;
+  height: 30vw;
+}
+
+.weather-section {
+  display: flex;
+
+
 }
 
 

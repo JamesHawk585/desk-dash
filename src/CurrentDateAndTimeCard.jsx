@@ -10,8 +10,8 @@ const CurrentDateAndTimeCard = () => {
 
 
   return (
-    <div>
-      <h2>CurrentDateAndTimeCard</h2>
+    <div className="current-date-and-time-card">
+      <h2>Pculiar, MO</h2>
       <h2>{date.toString()}</h2>
     </div>
   );

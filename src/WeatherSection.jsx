@@ -2,15 +2,14 @@ import React from "react";
 import CurrentDateAndTimeCard from "./CurrentDateAndTimeCard";
 import CurrentWeatherCard from "./CurrentWeatherCard";
 
-const WeatherSection = (weather) => {
-    console.log(weather)
+const WeatherSection = (currentWeather) => {
 
-    console.log(weather["detailedForecast"])
-    console.log(weather.detailedForecast)
   return (
     <>
+    <section className="weather-section">
       <CurrentDateAndTimeCard />
-      <CurrentWeatherCard weather={weather} />
+      <CurrentWeatherCard currentWeather={currentWeather} />
+      </section>
     </>
   );
 };
