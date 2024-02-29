@@ -44,11 +44,18 @@ function App() {
       })
         .then((response) => response.json())
         .then((weatherData) => setCurrentWeather(weatherData.properties.periods[0]))
+        .then(console.log("I fetched!"))
         .catch((error) => console.error("Error fetching weather data:", error));
     };
 
     fetchCurrentWeather();
+    setInterval(fetchCurrentWeather, 300000)
+    
+    
   }, []);
+
+
+  console.log(currentWeather)
 
   return (
     <>
