@@ -1,5 +1,5 @@
 import React from "react";
-import DailyForecastCard from "./DailyForecastCard";
+import DailyForecastCard from "./DailyForecastCard.jsx";
 
 const ForecastCardList = ({ forecastWeather }) => {
   console.log(forecastWeather);
