@@ -25,9 +25,11 @@ function App() {
           'User-Agent': 'desk-dash/1.0'
         }
       }).then((r) => r.json())
+      .then((console.log("forecast fetched")))
       .then((forecastData) => setForecastWeather(forecastData.properties.periods))
     };
       fetchForecastWeather();
+      setInterval(fetchForecastWeather, 30000)
   }, [])
 
 
@@ -44,7 +46,7 @@ function App() {
       })
         .then((response) => response.json())
         .then((weatherData) => setCurrentWeather(weatherData.properties.periods[0]))
-        .then(console.log("I fetched!"))
+        .then(console.log("Current weather fetched!"))
         .catch((error) => console.error("Error fetching weather data:", error));
     };
 
