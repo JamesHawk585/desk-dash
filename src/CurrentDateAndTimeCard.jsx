@@ -11,7 +11,7 @@ const CurrentDateAndTimeCard = () => {
 
   return (
     <div className="current-date-and-time-card">
-      <h2>Pculiar, MO</h2>
+      <h2>Peculiar, MO</h2>
       <h2>{date.toString()}</h2>
     </div>
   );

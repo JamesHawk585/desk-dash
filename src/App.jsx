@@ -4,6 +4,7 @@ import CurrentDateAndTimeCard from "./CurrentDateAndTimeCard";
 import react, { useState, useEffect } from "react";
 import CalendarSection from "./CalendarSection.jsx"
 import WeatherSection from "./WeatherSection";
+import ForecastCardList from "./ForecastCardList.jsx";
 
 const API = "http://127.0.0.1:5555/forecast";
 const peculiarWeatherAPI = "https://api.weather.gov/points/38.7192,-94.4586";
@@ -14,7 +15,7 @@ const weatherForecastAPI =
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState({});
-  const [forecastWeather, setForecastWeather] = useState([])
+  const [forecastWeather, setForecastWeather] = useState({})
 
 
   useEffect(() => {
@@ -30,7 +31,6 @@ function App() {
   }, [])
 
 
-  console.log(forecastWeather)
   // const forecastArray = forecastWeather ? forecastWeather.properties.periods : null;
   
 
@@ -51,11 +51,17 @@ function App() {
   }, []);
 
 
+  // const forecastWeatherArray = Object.entries(forecastWeather)
+
+  // console.log(forecastWeatherArray)
+  // console.log(forecastWeatherArray)
+
   return (
     <>
       <section className="app">
-        <WeatherSection currentWeather={currentWeather}/>
+        <WeatherSection currentWeather={currentWeather} forecastWeather={forecastWeather}/>
         <CalendarSection />
+        <ForecastCardList forecastWeather={forecastWeather}/>
       </section>
     </>
   );
