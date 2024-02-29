@@ -2,7 +2,6 @@ import React from "react";
 import DailyForecastCard from "./DailyForecastCard.jsx";
 
 const ForecastCardList = ({ forecastWeather }) => {
-  console.log(forecastWeather);
 
   const forecastCards = forecastWeather.map((card, index) => (
     <DailyForecastCard
@@ -22,7 +21,6 @@ const ForecastCardList = ({ forecastWeather }) => {
   return (
     <>
       {forecastCards}
-      <div>placeholder</div>
     </>
   );
 };

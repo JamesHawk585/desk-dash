@@ -50,20 +50,12 @@ function App() {
     fetchCurrentWeather();
   }, []);
 
-  console.log(forecastWeather)
-
-
-  // const forecastWeatherArray = Object.entries(forecastWeather)
-
-  // console.log(forecastWeatherArray)
-  // console.log(forecastWeatherArray)
-
   return (
     <>
       <section className="app">
         <WeatherSection currentWeather={currentWeather} forecastWeather={forecastWeather}/>
-        <CalendarSection />
         <ForecastCardList forecastWeather={forecastWeather}/>
+        <CalendarSection />
       </section>
     </>
   );
