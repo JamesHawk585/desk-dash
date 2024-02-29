@@ -4,6 +4,8 @@ import CurrentWeatherCard from "./CurrentWeatherCard";
 
 const WeatherSection = ({currentWeather, forecastWeather}) => {
 
+  console.log(forecastWeather)
+
   return (
     <>
     <section className="weather-section">

@@ -15,7 +15,7 @@ const weatherForecastAPI =
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState({});
-  const [forecastWeather, setForecastWeather] = useState({})
+  const [forecastWeather, setForecastWeather] = useState([])
 
 
   useEffect(() => {
@@ -49,6 +49,8 @@ function App() {
 
     fetchCurrentWeather();
   }, []);
+
+  console.log(forecastWeather)
 
 
   // const forecastWeatherArray = Object.entries(forecastWeather)
